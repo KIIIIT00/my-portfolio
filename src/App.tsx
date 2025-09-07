@@ -12,7 +12,7 @@ import ScrollToTop from './components/ScrollToTop';
 
 const App: React.FC = () => {
     return (
-        <Router>
+        <Router basename={process.env.PUBLIC_URL}>
           <ScrollToTop />
             <Header />
             <main>

@@ -1,24 +1,28 @@
 import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Header: React.FC = () => {
   const [menuActive, setMenuActive] = useState(false);
-  const location = useLocation();
+  const navigate = useNavigate();
 
-  const handleNavClick = (hash: string) => {
+  const handleNavClick = (sectionId: string) => {
     setMenuActive(false);
-    if (location.pathname === '/') {
-      const element = document.getElementById(hash.substring(1));
+    // まずトップページに移動する
+    navigate('/');
+    // 少し待ってからスクロール処理を実行
+    setTimeout(() => {
+      const element = document.getElementById(sectionId);
       if (element) {
+        const headerOffset = 70; // ヘッダーの高さ
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
         window.scrollTo({
-          top: element.offsetTop - 70, // headerの高さ分を引く
-          behavior: 'smooth',
+          top: offsetPosition,
+          behavior: 'smooth'
         });
       }
-    } else {
-      // トップページ以外からは、ハッシュ付きでトップページに遷移
-      window.location.href = `/${hash}`;
-    }
+    }, 100); // 100ミリ秒待つことで、ページ遷移が完了してからスクロールする
   };
 
   return (
@@ -31,11 +35,11 @@ const Header: React.FC = () => {
           <div className="menu-toggle" onClick={() => setMenuActive(!menuActive)}>&#9776;</div>
           <nav>
             <ul className={menuActive ? 'active' : ''}>
-              <li><a href="/#profile" onClick={(e) => { e.preventDefault(); handleNavClick('#profile'); }}>プロフィール</a></li>
-              <li><a href="/#skills" onClick={(e) => { e.preventDefault(); handleNavClick('#skills'); }}>スキル</a></li>
-              <li><a href="/#projects" onClick={(e) => { e.preventDefault(); handleNavClick('#projects'); }}>成果物</a></li>
-              <li><a href="/#research" onClick={(e) => { e.preventDefault(); handleNavClick('#research'); }}>研究内容</a></li>
-              <li><a href="/#publications" onClick={(e) => { e.preventDefault(); handleNavClick('#publications'); }}>学会発表</a></li>
+              <li><button onClick={() => handleNavClick('profile')}>プロフィール</button></li>
+              <li><button onClick={() => handleNavClick('skills')}>スキル</button></li>
+              <li><button onClick={() => handleNavClick('projects')}>成果物</button></li>
+              <li><button onClick={() => handleNavClick('research')}>研究内容</button></li>
+              <li><button onClick={() => handleNavClick('publications')}>学会発表</button></li>
             </ul>
           </nav>
         </div>
