@@ -8,10 +8,12 @@ import Othello from './pages/Ohello';
 import ImageCompression from './pages/ImageCompression';
 import LabWebsite from './pages/LabWebsite';
 import NNGenerator from './pages/NNGenerator';
+import ScrollToTop from './components/ScrollToTop';
 
 const App: React.FC = () => {
     return (
         <Router>
+          <ScrollToTop />
             <Header />
             <main>
                 <Routes>
