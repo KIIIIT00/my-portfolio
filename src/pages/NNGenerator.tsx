@@ -6,7 +6,7 @@ const NNGenerator: React.FC = () => {
       title: 'No-Code Neural Network Code Generator',
       period: '2025年4月 - 2025年5月', // (記事に記載がなかったため仮の日付)
       tags: ['React', 'JavaScript', 'Python', 'GitHub Pages', 'Tailwind CSS'],
-      coverImage: { src: "assets/images/project/nn-generator/nn-generator.png", alt: 'No-Code Neural Network Code Generatorの画面' },
+      coverImage: { src: `${process.env.PUBLIC_URL}/assets/images/project/nn-generator/nn-generator.png`, alt: 'No-Code Neural Network Code Generatorの画面' },
       githubUrl: 'https://github.com/KIIIIT00/nn-generator',
       overview: (
         <>
@@ -36,7 +36,7 @@ const NNGenerator: React.FC = () => {
         </>
       ),
       additionalImages: [
-          { src: "/assets/images/project/nn-generator/change_settings.png", alt: 'オプティマイザーを変更したときの画面' }
+          { src: `${process.env.PUBLIC_URL}/assets/images/project/nn-generator/change_settings.png`, alt: 'オプティマイザーを変更したときの画面' }
       ]
     };
   

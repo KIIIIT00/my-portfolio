@@ -9,7 +9,7 @@ const Profile: React.FC = () => {
           </div>
           <div className="profile">
             <div className="profile-img">
-              <img src={"/assets/images/profile/profile.jpg"} alt="プロフィール写真" />
+              <img src={`${process.env.PUBLIC_URL}/assets/images/profile/profile.jpg`} alt="プロフィール写真" />
             </div>
             <div className="profile-content">
               <h3>河原 壱樹（かわはら　いつき）</h3>
@@ -25,13 +25,13 @@ const Profile: React.FC = () => {
               </div>
               <div className="social-links">
                 <a href="https://github.com/KIIIIT00" className="social-link" title="GitHub">
-                  <img src={"/assets/images/social-link/github-mark.png"} alt="GitHub" />
+                  <img src={`${process.env.PUBLIC_URL}/assets/images/social-link/github-mark.png`} alt="GitHub" />
                 </a>
                 <a href="https://qiita.com/KenjiEndou" className="social-link" title="Qiita">
-                  <img src={"/assets/images/social-link/qiita-icon.png"} alt="Qiita" />
+                  <img src={`${process.env.PUBLIC_URL}/assets/images/social-link/qiita-icon.png`} alt="Qiita" />
                 </a>
                 <a href="https://zenn.dev/kenjiendou" className="social-link" title="Zen">
-                  <img src={"/assets/images/social-link/zenn-logo.svg"} alt="Zen" />
+                  <img src={`${process.env.PUBLIC_URL}/assets/images/social-link/zenn-logo.svg`} alt="Zen" />
                 </a>
               </div>
             </div>

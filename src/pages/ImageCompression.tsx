@@ -7,7 +7,7 @@ const ImageCompression: React.FC = () => {
         title: '画像圧縮ツール',
         period: '2025年1月 - 2025年3月',
         tags: ['Python', 'Tkinter'],
-        coverImage: { src: "/assets/images/project/image_compression/menu.jpg", alt: '画像圧縮ツール' },
+        coverImage: { src: `${process.env.PUBLIC_URL}/assets/images/project/image_compression/menu.jpg`, alt: '画像圧縮ツール' },
         githubUrl: 'https://github.com/KIIIIT00/image_compression',
         overview: (
             <p>Pythonを用いたGUI，CUIの両方から使用できる画像圧縮ツールです。</p>
@@ -31,7 +31,7 @@ const ImageCompression: React.FC = () => {
             <p>機能だけでなく、使いやすさも重要であることを再認識できた。また、多様な画像形式に対応するようにしているときに、予期せぬエラーが多数発生し、堅牢なエラーハンドリングの重要性を学んだ。マルチスレッド処理の実装をやることができ、並列処理の知識が深まった。</p>
         ),
         additionalImages: [
-            { src: "/assets/images/project/image_compression/Lena_compression.jpg", alt: '圧縮するフォルダを選択したときの画面' }
+            { src: `${process.env.PUBLIC_URL}/assets/images/project/image_compression/Lena_compression.jpg`, alt: '圧縮するフォルダを選択したときの画面' }
         ]
     };
 

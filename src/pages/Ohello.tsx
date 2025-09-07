@@ -7,7 +7,7 @@ const Othello: React.FC = () => {
     title: 'オセロゲームアプリ',
     period: '2022年10月 - 2023年11月',
     tags: ['Android Studio', 'Java'],
-    coverImage: { src: "/assets/images/project/othello/othello.jpeg", alt: 'Othello' },
+    coverImage: { src: `${process.env.PUBLIC_URL}/assets/images/project/othello/othello.jpeg`, alt: 'Othello' },
     githubUrl: 'https://github.com/KIIIIT00/RevesiGame',
     overview: (
       <p>Android Studioを用いてCPU対戦機能，対面対戦機能を備えたオセロゲームアプリ</p>
@@ -31,7 +31,7 @@ const Othello: React.FC = () => {
       </>
     ),
     additionalImages: [
-        { src: "/assets/images/project/othello/AndroidStudio.jpg", alt: 'Android Studio' }
+        { src: `${process.env.PUBLIC_URL}/assets/images/project/othello/AndroidStudio.jpg`, alt: 'Android Studio' }
     ]
   };
 

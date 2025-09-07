@@ -7,7 +7,7 @@ const PhotoMemory: React.FC = () => {
       title: '思い出振り返りアプリ',
       period: '2023年4月 - 2023年7月',
       tags: ['Java', 'Android Studio', 'Firebase', 'Google Cloud'],
-      coverImage: { src: "/assets/images/project/photo_memory/photo_memory_cover.png", alt: '思い出振り返りアプリ メイン画像' },
+      coverImage: { src: `${process.env.PUBLIC_URL}/assets/images/project/photo_memory/photo_memory_cover.png`, alt: '思い出振り返りアプリ メイン画像' },
       githubUrl: 'https://github.com/KIIIIT00/PhotoMemoryAlbumApp',
       overview: (
         <>
@@ -37,10 +37,10 @@ const PhotoMemory: React.FC = () => {
         </>
       ),
       galleryImages: [
-          { src: "/assets/images/project/photo_memory/register.png", alt: 'アプリの画面1' },
-          { src: "/assets/images/project/photo_memory/register_skytree.png", alt: 'アプリの画面2' },
-          { src: "/assets/images/project/photo_memory/location_skytree.png", alt: 'アプリの画面3' },
-          { src: "/assets/images/project/photo_memory/register_locations.png", alt: 'アプリの画面4' },
+          { src: `${process.env.PUBLIC_URL}/assets/images/project/photo_memory/register.png`, alt: 'アプリの画面1' },
+          { src: `${process.env.PUBLIC_URL}/assets/images/project/photo_memory/register_skytree.png`, alt: 'アプリの画面2' },
+          { src: `${process.env.PUBLIC_URL}/assets/images/project/photo_memory/location_skytree.png`, alt: 'アプリの画面3' },
+          { src: `${process.env.PUBLIC_URL}/assets/images/project/photo_memory/register_locations.png`, alt: 'アプリの画面4' },
       ],
     };
   
