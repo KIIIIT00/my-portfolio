@@ -47,6 +47,15 @@ const projectData = [
         link: '/nn-generator',
         githubUrl: 'https://github.com/KIIIIT00/nn-generator',
         websiteUrl: 'https://kiiiit00.github.io/nn-generator/'
+    },
+    {
+        title: 'クソコードライブラリ',
+        description: '世の中の実用性のないクソみたいなソートを集めたライブラリ',
+        imageUrl: 'assets/images/project/kusosort/kusosort.png',
+        tags: [ 'Python', 'C++', 'PyPI'],
+        link: '/kusosort',
+        githubUrl: 'https://github.com/KIIIIT00/kusosort',
+        websiteUrl: 'https://pypi.org/project/kusosort/'
     }
 ]
 

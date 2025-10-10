@@ -9,6 +9,7 @@ import ImageCompression from './pages/ImageCompression';
 import LabWebsite from './pages/LabWebsite';
 import NNGenerator from './pages/NNGenerator';
 import ScrollToTop from './components/ScrollToTop';
+import Kusosort from './pages/Kusosort';
 
 const App: React.FC = () => {
     return (
@@ -23,6 +24,7 @@ const App: React.FC = () => {
                     <Route path="/image_compression" element={<ImageCompression />} />
                     <Route path="/lab_website" element={<LabWebsite />} />
                     <Route path="/nn-generator" element={<NNGenerator />} />
+                    <Route path="/kusosort" element={<Kusosort />} />
                 </Routes>
             </main>
             <Footer />
