@@ -97,7 +97,7 @@ const ProjectDetailLayout: React.FC<ProjectDetailLayoutProps> = ({
         </div>
 
         <div className="back-link">
-          <Link to="/#projects">← 成果物一覧に戻る</Link>
+          <Link to="/projects">← 成果物一覧に戻る</Link>
         </div>
       </div>
     </section>
