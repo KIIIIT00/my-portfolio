@@ -490,6 +490,243 @@ nav ul li a:hover::after {
   margin-top: 10px;
   font-weight: 500;
 }
+.publication-category-block {
+  margin-bottom: 4rem;
+}
+
+.category-subtitle {
+  font-size: 1.35rem;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  display: inline-block;
+  position: relative;
+}
+
+.timeline-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.publication-timeline-item {
+  display: flex;
+  align-items: flex-start;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+@media (hover: hover) {
+  .publication-timeline-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 8px 15px rgba(0, 123, 255, 0.1);
+    border-color: #007bff;
+    cursor: default;
+  }
+}
+
+.pub-date {
+  background-color: #f7f7f7;
+  border-right: 1px solid #e0e0e0;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90px;
+  align-self: stroke; /* 親要素の高さに引き伸ばす */
+}
+
+.pub-year {
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 500;
+  margin-bottom: 0.2rem;
+}
+
+.pub-month {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111;
+  line-height: 1;
+}
+
+.pub-content {
+  padding: 1.5rem;
+  flex: 1;
+}
+
+/* タイトルとタグを綺麗に並べるためのコンテナ */
+.pub-title-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.pub-title {
+  font-size: 1.1rem;
+  margin: 0;
+  color: #111;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+/* 著者名の中の自分の名前の強調（太字 + 綺麗にする場合アンダーライン等） */
+.my-name {
+  color: #000;
+  font-weight: 800;
+  text-decoration: underline; /* オプション：さらに目立たせたい場合 */
+}
+
+/* ⑤ 追加：タグ（バッジ）のベースデザイン */
+.pub-tags {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.pub-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+}
+
+/* ご提示画像を参考にした各種タグのカラーバリエーション */
+.pub-tag.tag-査読有 {
+  background-color: #e6f7ff;
+  color: #1890ff;
+  border-color: #91d5ff;
+}
+
+.pub-tag.tag-査読無 {
+  background-color: #f5f5f5;
+  color: #666666;
+  border-color: #d9d9d9;
+}
+
+.pub-tag.tag-oral {
+  background-color: #f6ffed;
+  color: #52c41a;
+  border-color: #b7eb8f;
+}
+
+.pub-tag.tag-poster {
+  background-color: #fff7e6;
+  color: #fa8c16;
+  border-color: #ffd591;
+}
+
+.pub-meta p {
+  font-size: 0.88rem;
+  margin: 0.4rem 0;
+  color: #555;
+  line-height: 1.5;
+}
+
+.pub-meta strong {
+  color: #333;
+  font-weight: 600;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 576px) {
+  .publication-timeline-item {
+    flex-direction: column;
+  }
+  .pub-date {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 0.8rem;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 0.8rem;
+  }
+  .pub-year {
+    font-size: 1rem;
+    margin-bottom: 0;
+  }
+  .pub-month {
+    font-size: 1.3rem;
+  }
+  .pub-content {
+    padding: 1.2rem;
+  }
+}
+
+.pub-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap; /* 画面が狭くても綺麗に折り返すように設定 */
+}
+
+.pub-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.65rem;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  letter-spacing: 0.05em;
+}
+
+/* ------------------------------------------------------------
+   各種タグのカラーバリエーション（パステル調かつ視認性の高い配色）
+   ------------------------------------------------------------ */
+/* ⑥ 受賞：華やかで特別感があり、一目でわかるゴールド調の配色 */
+.pub-tag.tag-優秀講演賞 {
+  background-color: #fa8c16;
+  color: #fff;
+  border-color: #d46b08;
+  box-shadow: 0 2px 4px rgba(218, 177, 6, 0.25);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+/* ① 査読有：信頼感のあるブルー */
+.pub-tag.tag-査読有 {
+  background-color: #e6f7ff; /* 薄い青 */
+  color: #1890ff;            /* 濃い青 */
+  border-color: #91d5ff;     /* 中間の青の枠線 */
+}
+
+/* ② 査読無：目立ちすぎないシックなライトグレー */
+.pub-tag.tag-査読無 {
+  background-color: #f5f5f5; /* 薄いグレー */
+  color: #5c5c5c;            /* 濃いグレー */
+  border-color: #d9d9d9;     /* 中間のグレーの枠線 */
+}
+
+/* ③ Oral（口頭発表）：活発で前向きな印象のグリーン */
+.pub-tag.tag-oral {
+  background-color: #f6ffed; /* 薄い緑 */
+  color: #389e0d;            /* 濃い緑 */
+  border-color: #b7eb8f;     /* 中間の緑の枠線 */
+}
+
+/* ④ Poster（ポスター発表）：温かみがあり認識しやすいオレンジ */
+.pub-tag.tag-poster {
+  background-color: #fff7e6; /* 薄いオレンジ */
+  color: #d46b08;            /* 濃いオレンジ */
+  border-color: #ffd591;     /* 中間のオレンジの枠線 */
+}
+
+/* ⑤（追加候補）Journal / 論文誌：特別感のあるマゼンタ・パープル */
+.pub-tag.tag-journal {
+  background-color: #f9f0ff; /* 薄い紫 */
+  color: #722ed1;            /* 濃い紫 */
+  border-color: #d3adf7;     /* 中間の紫の枠線 */
+}
 
 /* お問い合わせセクション */
 .contact-form {
