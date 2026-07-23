@@ -33,6 +33,16 @@ const publicationsData: Publication[] = [
     tags: ['採択済み']
   },
   {
+    year: '2026',
+    month: '06',
+    title: 'EdgeJamMa: エッジ特徴を用いたJoint Mambaによる特徴マッチング',
+    authors: '河原　壱樹, 細田　侑也，李　周浩',
+    conference: 'ロボティクス・メカトロニクス講演会2026（ROBOMECH2026）',
+    date: '2026年6月28日 - 2026年7月1日',
+    location:"福岡国際会議場",
+    category: 'domestic_no_peer',
+  },
+  {
     year: '2025',
     month: '12',
     title: '疑似ペアデータ生成による熱赤外線視覚言語モデルの構築',
@@ -62,7 +72,7 @@ const publicationsData: Publication[] = [
     date: '2024年12月18日 - 2024年12月20日',
     location: 'アイーナいわて県民交流センター（岩手県盛岡市）',
     category: 'domestic_no_peer'
-  }
+  },
 ];
 
 const Publications: React.FC = () => {
