@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -12,10 +12,28 @@ import ScrollToTop from './components/ScrollToTop';
 import Kusosort from './pages/Kusosort';
 
 const App: React.FC = () => {
+    const [theme, setTheme] = useState<'light' | 'dark'>(() => {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light' || savedTheme === 'dark') {
+            return savedTheme;
+        }
+
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    });
+
+    useEffect(() => {
+        document.documentElement.dataset.theme = theme;
+        localStorage.setItem('theme', theme);
+    }, [theme]);
+
+    const toggleTheme = () => {
+        setTheme((currentTheme) => currentTheme === 'light' ? 'dark' : 'light');
+    };
+
     return (
         <Router basename={process.env.PUBLIC_URL}>
           <ScrollToTop />
-            <Header />
+            <Header theme={theme} onToggleTheme={toggleTheme} />
             <main>
                 <Routes>
                     <Route path="/" element={<Home />} />

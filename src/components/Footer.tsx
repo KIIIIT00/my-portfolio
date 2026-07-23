@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
               <li><a href="/#skills">スキル</a></li>
               <li><a href="/#projects">成果物</a></li>
               <li><a href="/#research">研究内容</a></li>
-              <li><a href="/#publications">学会発表</a></li>
+              <li><a href="/#publications">研究業績</a></li>
             </ul>
           </div>
           <div className="footer-column">

@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
-const Header: React.FC = () => {
+type HeaderProps = {
+  theme: 'light' | 'dark';
+  onToggleTheme: () => void;
+};
+
+const Header: React.FC<HeaderProps> = ({ theme, onToggleTheme }) => {
   const [menuActive, setMenuActive] = useState(false);
   const navigate = useNavigate();
 
@@ -40,6 +45,16 @@ const Header: React.FC = () => {
               <li><button onClick={() => handleNavClick('projects')}>成果物</button></li>
               <li><button onClick={() => handleNavClick('research')}>研究内容</button></li>
               <li><button onClick={() => handleNavClick('publications')}>学会発表</button></li>
+              <li>
+                <button
+                  className="theme-toggle"
+                  type="button"
+                  onClick={onToggleTheme}
+                  aria-label={`${theme === 'light' ? 'ダーク' : 'ライト'}モードに切り替え`}
+                >
+                  {theme === 'light' ? '🌙 Dark' : '☀️ Light'}
+                </button>
+              </li>
             </ul>
           </nav>
         </div>

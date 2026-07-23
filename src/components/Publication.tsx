@@ -68,23 +68,19 @@ const publicationsData: Publication[] = [
 const Publications: React.FC = () => {
   // 自分の名前を太字にするためのヘルパー関数
   const renderAuthors = (authorsText: string) => {
-    const targetName = '河原　壱樹';
-    // 全角スペースや半角スペースの表記揺れに対応するため、targetNameで分割して結合する
-    const parts = authorsText.split(targetName);
-    
-    if (parts.length > 1) {
-      return (
-        <>
-          {parts.map((part, index) => (
-            <React.Fragment key={index}>
-              {part}
-              {index < parts.length - 1 && <strong className="my-name">{targetName}</strong>}
-            </React.Fragment>
-          ))}
-        </>
-      );
-    }
-    return authorsText;
+    const targetNames = ['河原　壱樹', 'Itsuki Kawahara'];
+    const pattern = new RegExp(`(${targetNames.join('|')})`, 'g');
+    const parts = authorsText.split(pattern);
+
+    return (
+      <>
+        {parts.map((part, index) => (
+          targetNames.includes(part)
+            ? <strong className="my-name" key={index}>{part}</strong>
+            : <React.Fragment key={index}>{part}</React.Fragment>
+        ))}
+      </>
+    );
   };
 
   return (
