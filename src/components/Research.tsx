@@ -44,8 +44,10 @@ const Research: React.FC = () => {
         {researchData.map((item, index) => (
           <div className="research-item" key={index}>
             <h3>{item.title}</h3>
-            <span>研究期間: {item.period}</span>
-            <span>指導教員: {item.supervisor}</span>
+            <div className="research-meta">
+              <span>研究期間: {item.period}</span>
+              <span>指導教員: {item.supervisor}</span>
+            </div>
             {item.description.map((paragraph, pIndex) => (
               <p key={pIndex}>{paragraph}</p>
             ))}
